@@ -1,0 +1,109 @@
+/* Fondo general */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1abc9c, #16a085, #2c3e50);
+    color: #fff;
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(44, 62, 80, 0.9);
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+}
+header h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #f1c40f;
+    text-shadow: 2px 2px 4px #000;
+}
+header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #ecf0f1;
+}
+.logout a {
+    color: #e74c3c;
+    font-weight: bold;
+    text-decoration: none;
+    background: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.logout a:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+/* Menú */
+.menu {
+    display: flex;
+    justify-content: center;
+    background: rgba(52, 73, 94, 0.95);
+    padding: 10px 0;
+    flex-wrap: wrap;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+.menu a:hover {
+    background: #1abc9c;
+    transform: scale(1.1);
+}
+
+/* Contenido principal */
+.content {
+    text-align: center;
+    padding: 40px 20px;
+}
+.content h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #f39c12;
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* Tarjetas */
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 15px;
+    width: 260px;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s, background 0.3s;
+    backdrop-filter: blur(8px);
+}
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.2);
+}
+.card i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #f1c40f;
+}
+.card h3 {
+    margin: 10px 0;
+    color: #fff;
+    font-size: 20px;
+}
+.card p {
+    font-size: 14px;
+    color: #ecf0f1;
+}

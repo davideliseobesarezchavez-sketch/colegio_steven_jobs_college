@@ -1,0 +1,25 @@
+body { font-family: Arial, sans-serif; background:#eff6ff; padding:20px; margin:0; }
+h2 { color:#1d4ed8; }
+
+.card { 
+    background:#dbeafe; 
+    padding:15px; 
+    margin:10px 0; 
+    border-radius:10px; 
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6366f1;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+.btn-back:hover {
+    background-color: #4f46e5;
+}

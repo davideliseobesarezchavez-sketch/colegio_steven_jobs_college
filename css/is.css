@@ -1,0 +1,6 @@
+body { font-family: Arial; background:#f9fafb; padding:20px; }
+.card { background:#fff; padding:15px; margin:10px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+button { margin:5px; padding:5px 10px; border:none; border-radius:5px; cursor:pointer;}
+.presente { background:#16a34a; color:white; }
+.tarde { background:#f59e0b; color:white; }
+.ausente { background:#dc2626; color:white; }

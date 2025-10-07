@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; padding: 20px; background: #f0f4f8; }
+h2 { color: #1e40af; }
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+th { background-color: #1d4ed8; color: white; }
+button { padding: 10px 20px; margin-top: 15px; background: #1d4ed8; color: white; border: none; border-radius: 5px; cursor: pointer; }
+button:hover { background: #1e40af; }
+.mensaje { color: green; font-weight: bold; margin-top: 10px; }
