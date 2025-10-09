@@ -1,15 +1,15 @@
 # 🔒 Deshabilitar listado de directorios
 Options -Indexes
 
-# 🏠 Forzar que se cargue dashboard.php como página principal
-DirectoryIndex dashboard.php
+# 🏠 Forzar que se cargue login.php como página principal
+DirectoryIndex login.php
 
 # 🔁 Activar motor de reescritura
 RewriteEngine On
 
 # --- 1️⃣ Redirigir cualquier acceso directo al raíz hacia dashboard.php ---
 RewriteCond %{REQUEST_URI} ^/$
-RewriteRule ^.*$ dashboard.php [L]
+RewriteRule ^.*$ login.php [L]
 
 # --- 2️⃣ Redirección limpia: quitar .php de las URLs ---
 RewriteCond %{THE_REQUEST} \s/+([^.]+)\.php [NC]
