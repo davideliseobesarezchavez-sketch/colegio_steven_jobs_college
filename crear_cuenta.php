@@ -161,6 +161,10 @@ $conn->close();
                 <button type="submit" class="w-full p-3 rounded-lg bg-pink-600 text-black font-bold text-lg cursor-pointer transition-all duration-300 hover:bg-fuchsia-700 transform hover:-translate-y-1 hover:shadow-lg">
                     Crear cuenta
                 </button>
+
+                 <div class="text-center mt-4">
+                    <a href="login" class="text-white font-semibold underline hover:text-yellow-200">¿Ya tienes cuenta? Inicia sesión</a>
+                </div>
             </form>
         </div>
     </main>

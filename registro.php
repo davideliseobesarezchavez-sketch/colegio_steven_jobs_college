@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="flex-1 max-w-xl p-8 lg:p-10 rounded-3xl text-left text-white backdrop-blur-xl shadow-2xl
                 bg-gradient-to-br from-blue-400/40 to-indigo-600/40">
         <div class="flex items-center space-x-4 mb-4">
-            <img src="colegio_steven_jobs_college.png" alt="logo colegio" class="w-20 h-20">
+            <img src="colegio steven jobs college.png" alt="logo colegio" class="w-20 h-20">
             <h1 class="text-3xl font-light tracking-wide text-yellow-300">Bienvenido a Steve Jobs College</h1>
         </div>
         <p class="text-lg font-light text-gray-200">
@@ -166,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </button>
 
             <div class="text-center mt-4">
-                <a href="login.php" class="text-white font-semibold underline hover:text-yellow-200">¿Ya tienes cuenta? Inicia sesión</a>
+                <a href="login" class="text-white font-semibold underline hover:text-yellow-200">¿Ya tienes cuenta? Inicia sesión</a>
             </div>
         </form>
     </div>

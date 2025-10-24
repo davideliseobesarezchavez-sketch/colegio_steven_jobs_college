@@ -111,8 +111,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <!-- Enlaces de navegación a otras páginas. -->
             <div class="flex justify-between max-w-sm mx-auto mt-6 text-sm">
-                <a href="login.php" class="text-white hover:text-gray-300 transition-colors duration-300">Iniciar Sesión</a>
-                <a href="registro.php" class="text-white hover:text-gray-300 transition-colors duration-300">Registrarse</a>
+                <a href="login" class="text-white hover:text-gray-300 transition-colors duration-300">Iniciar Sesión</a>
+                <a href="registro" class="text-white hover:text-gray-300 transition-colors duration-300">Registrarse</a>
             </div>
         </div>
     </main>

@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="flex justify-center items-center mt-8 space-x-10 text-sm text-white">
                     <a href="crear_cuenta" class="hover:text-yellow-200 hover:underline transition-all duration-200">Crear cuenta</a>
-                    <a href="recuperar_contraseña" class="hover:text-yellow-200 hover:underline transition-all duration-200">¿Olvidaste tu contraseña?</a>
+                    <a href="recuperar_contrasena" class="hover:text-yellow-200 hover:underline transition-all duration-200">¿Olvidaste tu contraseña?</a>
                     <a href="registro" class="hover:text-yellow-300 hover:underline transition-all duration-200">Registrarse</a>
                 </div>
             </form>

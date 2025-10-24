@@ -1,5 +1,5 @@
 # ======================================================
-# 🚀 SISTEMA ESCOLAR - URLs limpias y seguras
+# 🚀 SISTEMA ESCOLAR - URLs limpias y seguras (sin .php)
 # ======================================================
 
 RewriteEngine On
@@ -13,11 +13,12 @@ RewriteRule ^$ login [L,R=302]
 
 # =======================================================
 # 🧩 Eliminar extensión .php en la raíz
-# (Ejemplo: /login → /login.php)
+# (Ejemplo: /login → /login.php, /registro → /registro.php, /recuperar_contrasena → /recuperar_contrasena.php)
 # =======================================================
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [L,QSA]
+# Solo letras normales, números, guiones y guiones bajos (sin acentos ni ñ)
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [L,QSA,NC]
 
 # =======================================================
 # ✨ Rutas limpias dentro de /index/
@@ -25,32 +26,15 @@ RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [L,QSA]
 # =======================================================
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^index/([a-zA-Z0-9_-]+)/?$ index/$1.php [L,QSA]
+RewriteRule ^index/([a-zA-Z0-9_-]+)/?$ index/$1.php [L,QSA,NC]
 
 # =======================================================
-# 🪄 Redirección especial:
-# /index/registro → /registro.php (archivo en raíz)
-# =======================================================
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^index/registro/?$ registro.php [L,QSA]
-
-# =======================================================
-# 🪄 Redirección adicional (opcional):
-# /index/crear_cuenta → /crear_cuenta.php
-# /index/recuperar_contraseña → /recuperar_contraseña.php
-# =======================================================
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^index/(crear_cuenta|recuperar_contraseña)/?$ $1.php [L,QSA]
-
-# =======================================================
-# ✨ Rutas limpias para /includes/
+# ✨ Rutas limpias dentro de /includes/
 # (Ejemplo: /includes/actualizar_tarea → /includes/actualizar_tarea.php)
 # =======================================================
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^includes/([a-zA-Z0-9_-]+)/?$ includes/$1.php [L,QSA]
+RewriteRule ^includes/([a-zA-Z0-9_-]+)/?$ includes/$1.php [L,QSA,NC]
 
 # =======================================================
 # 🛡️ Proteger carpetas internas
