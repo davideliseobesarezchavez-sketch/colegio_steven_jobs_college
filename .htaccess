@@ -1,22 +1,8 @@
-# 🔒 Deshabilitar listado de directorios
-Options -Indexes
-
-# 🏠 Forzar que se cargue login.php como página principal
-DirectoryIndex login.php
-
-# 🔁 Activar motor de reescritura
+# Habilitar el motor de reescritura de Apache
+# Esto es necesario si se usa cualquier tipo de reescritura de URL, aunque
+# la directiva DirectoryIndex no lo requiere estrictamente.
 RewriteEngine On
 
-# --- 1️⃣ Redirigir cualquier acceso directo al raíz hacia dashboard.php ---
-RewriteCond %{REQUEST_URI} ^/$
-RewriteRule ^.*$ login.php [L]
-
-# --- 2️⃣ Redirección limpia: quitar .php de las URLs ---
-RewriteCond %{THE_REQUEST} \s/+([^.]+)\.php [NC]
-RewriteRule ^ %1 [R=301,L]
-
-# --- 3️⃣ Permitir que las URLs sin .php funcionen ---
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{DOCUMENT_ROOT}/$1.php -f
-RewriteRule ^(.+?)/?$ $1.php [L,QSA]
+# Establecer login.php como el archivo que el servidor buscará primero
+# al acceder a la carpeta sin especificar un archivo (ej. http://localhost/colegio_steven_jobs_college/)
+DirectoryIndex login.php index.php index.html
