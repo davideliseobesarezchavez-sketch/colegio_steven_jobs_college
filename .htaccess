@@ -1,8 +1,43 @@
-# Habilitar el motor de reescritura de Apache
-# Esto es necesario si se usa cualquier tipo de reescritura de URL, aunque
-# la directiva DirectoryIndex no lo requiere estrictamente.
-RewriteEngine On
+# ============================================
+# 🚀 SISTEMA ESCOLAR - REESCRITURA DE URLS LIMPIAS
+# ============================================
 
-# Establecer login.php como el archivo que el servidor buscará primero
-# al acceder a la carpeta sin especificar un archivo (ej. http://localhost/colegio_steven_jobs_college/)
-DirectoryIndex login.php index.php index.html
+# Activar motor de reescritura
+RewriteEngine On
+RewriteBase /
+
+# ================================
+# 🔐 Redirigir raíz al login
+# ================================
+RewriteCond %{REQUEST_URI} ^/?$ [NC]
+RewriteRule ^$ login [L,R=302]
+
+# =======================================================
+# 🧩 Eliminar extensión .php de las URLs
+# (ejemplo: /login → login.php)
+# =======================================================
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [L,QSA]
+
+# =======================================================
+# 🛡️ Proteger carpetas internas
+# =======================================================
+RewriteRule ^(includes|PHPMailer-master|vendor|config)/ - [F,L]
+
+# =======================================================
+# 🚫 Bloquear acceso directo a archivos sensibles
+# =======================================================
+<FilesMatch "(^\.|config\.php|conexion\.php)">
+  Require all denied
+</FilesMatch>
+
+# =======================================================
+# 🌐 Evitar listado de directorios
+# =======================================================
+Options -Indexes
+
+# =======================================================
+# ✍️ Forzar codificación UTF-8
+# =======================================================
+AddDefaultCharset utf-8
