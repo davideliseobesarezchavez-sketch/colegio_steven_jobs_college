@@ -21,7 +21,14 @@ RewriteRule ^(.+?)/?$ $1.php [L,QSA]
 
 # =======================================================
 # ✨ Rutas limpias para /index/
-# (Ejemplo: /maestro → /index/index_maestro.php)
+# (Ejemplo: /index_maestro → /index/index_maestro.php)
+# =======================================================
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^index_(maestro|tutor|secretaria|admin)/?$ index/index_$1.php [L,QSA]
+
+# =======================================================
+# ✨ Alternativa corta: /maestro → /index/index_maestro.php
 # =======================================================
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -29,11 +36,11 @@ RewriteRule ^(maestro|tutor|secretaria|admin)/?$ index/index_$1.php [L,QSA]
 
 # =======================================================
 # 📦 Rutas limpias para /includes/
-# (Ejemplo: /contacto → /includes/contacto.php)
+# (Ejemplo: /actualizar_tarea → /includes/actualizar_tarea.php)
 # =======================================================
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(contacto|correo)/?$ includes/$1.php [L,QSA]
+RewriteRule ^(contacto|correo|actualizar_tarea|notas|mensajes)/?$ includes/$1.php [L,QSA]
 
 # =======================================================
 # 🛡️ Proteger carpetas internas
