@@ -1,24 +1,39 @@
-# ============================================
-# 🚀 SISTEMA ESCOLAR - REESCRITURA DE URLS LIMPIAS
-# ============================================
+# ======================================================
+# 🚀 SISTEMA ESCOLAR - URLs limpias y seguras
+# ======================================================
 
-# Activar motor de reescritura
 RewriteEngine On
-RewriteBase /
+RewriteBase /colegio_steven_jobs_college/
 
 # ================================
 # 🔐 Redirigir raíz al login
 # ================================
-RewriteCond %{REQUEST_URI} ^/?$ [NC]
+RewriteCond %{REQUEST_URI} ^/colegio_steven_jobs_college/?$ [NC]
 RewriteRule ^$ login [L,R=302]
 
 # =======================================================
-# 🧩 Eliminar extensión .php de las URLs
-# (ejemplo: /login → login.php)
+# 🧩 Eliminar extensión .php de todas las rutas
+# (Ejemplo: /login → login.php)
 # =======================================================
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [L,QSA]
+RewriteRule ^(.+?)/?$ $1.php [L,QSA]
+
+# =======================================================
+# ✨ Rutas limpias para /index/
+# (Ejemplo: /maestro → /index/index_maestro.php)
+# =======================================================
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(maestro|tutor|secretaria|admin)/?$ index/index_$1.php [L,QSA]
+
+# =======================================================
+# 📦 Rutas limpias para /includes/
+# (Ejemplo: /contacto → /includes/contacto.php)
+# =======================================================
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(contacto|correo)/?$ includes/$1.php [L,QSA]
 
 # =======================================================
 # 🛡️ Proteger carpetas internas
@@ -26,7 +41,7 @@ RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [L,QSA]
 RewriteRule ^(includes|PHPMailer-master|vendor|config)/ - [F,L]
 
 # =======================================================
-# 🚫 Bloquear acceso directo a archivos sensibles
+# 🚫 Bloquear archivos sensibles
 # =======================================================
 <FilesMatch "(^\.|config\.php|conexion\.php)">
   Require all denied
